@@ -1,11 +1,20 @@
+getwd()
+install.packages("ncdf4")
+install.packages("gdalUtils")
+install.packages("terra")
+#, configure.args = "--with-gdal-config=/var/lib/flatpak/app/org.qgis.qgis/x86_64/lts/f27e23035b69f37e4151a22b80057e1fcf1c435bd1236f498fba544686692a50/files/bin/gdal-config")
+#system("find / -name gdal.h 2>/dev/null")
+install.packages("raster")
+install.packages("ggplot2")
+version
 library(ncdf4) # package for netcdf manipulation
 library(raster) # package for raster manipulation
 library(rgdal) # package for geospatial analysis
 library(ggplot2) # package for plotting
 library("rasterVis")
 library("RColorBrewer")
-library('raster')
-  
+library(raster)
+install.packages("Rcpp")  
 ##############################################################
 ###### reading files of ERA5 daily min  temp for each year (in .netcdf and  kelvin)
 ###############################################################
@@ -35,7 +44,7 @@ rList_min #tengo una lista con las temperaturas
 
 
 #################################################################################################
-#Calculate and read p90s for Argentina
+# read p90s for Argentina
 #################################################################################################
 p90_max<-raster("/home/jdp/MEGA/CONAE/Olas de calor/Prueba Arg/p90_om_c_ARG.tif")
 p90_min <-raster("/home/jdp/MEGA/CONAE/Olas de calor/con_minimas/p90_min_arg.tif")
